@@ -9,6 +9,9 @@
         }
     },
     "keywords":["imageresizer", "thumbnail", "gd", "imagemagick"],
+    "require":{
+        "symfony/process": "v2.4.2"
+    },
     "require-dev":{
         "phpunit/phpunit": "3.7.31"
     }
