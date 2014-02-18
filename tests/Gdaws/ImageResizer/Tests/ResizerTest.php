@@ -3,9 +3,9 @@
 namespace Gdaws\ImageResizer\Tests;
 
 use Gdaws\ImageResizer\Tests\TestCase;
-use Gdaws\ImageResizer\ImageResizer;
+use Gdaws\ImageResizer\Resizer;
 
-class ImageResizerTest extends TestCase
+class ResizerTest extends TestCase
 {
     /**
      * @expectedException        Gdaws\ImageResizer\Exception\ImageResizerException
@@ -18,7 +18,7 @@ class ImageResizerTest extends TestCase
         $editor = $this->getMock("Gdaws\ImageResizer\Editor\EditorInterface");
         $mode = $this->getMock("Gdaws\ImageResizer\Mode\ModeInterface");
         
-        $resizer = new ImageResizer($editor);
+        $resizer = new Resizer($editor);
         
         $resizer->setMode($mode);
         $resizer->resize($source, "output.jpg");
@@ -41,7 +41,7 @@ class ImageResizerTest extends TestCase
                 $this->equalTo(array("quality" => 90))
             );
         
-        $resizer = new ImageResizer($editor);
+        $resizer = new Resizer($editor);
         
         $mode = $this->getMock("Gdaws\ImageResizer\Mode\ModeInterface");
         
@@ -80,7 +80,7 @@ class ImageResizerTest extends TestCase
                 $this->equalTo(array())
             );
         
-        $resizer = new ImageResizer($editor);
+        $resizer = new Resizer($editor);
         
         $mode = $this->getMock("Gdaws\ImageResizer\Mode\ModeInterface");
         
@@ -116,7 +116,7 @@ class ImageResizerTest extends TestCase
                 $this->equalTo(array())
             );
         
-        $resizer = new ImageResizer($editor);
+        $resizer = new Resizer($editor);
         
         $mode = $this->getMock("Gdaws\ImageResizer\Mode\ModeInterface");
         
@@ -152,7 +152,7 @@ class ImageResizerTest extends TestCase
                 $this->equalTo(array())
             );
         
-        $resizer = new ImageResizer($editor);
+        $resizer = new Resizer($editor);
         
         $mode = $this->getMock("Gdaws\ImageResizer\Mode\ModeInterface");
         
@@ -184,7 +184,7 @@ class ImageResizerTest extends TestCase
                 $this->equalTo(array())
             );
         
-        $resizer = new ImageResizer($editor);
+        $resizer = new Resizer($editor);
         
         $mode = $this->getMock("Gdaws\ImageResizer\Mode\ModeInterface");
         

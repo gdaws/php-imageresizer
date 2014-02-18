@@ -6,7 +6,7 @@ use Gdaws\ImageResizer\Editor\EditorInterface;
 use Gdaws\ImageResizer\Mode\ModeInterface;
 use Gdaws\ImageResizer\Exception\ImageResizerException;
 
-class ImageResizer
+class Resizer
 {
     private $editor;
     private $mode;
@@ -82,6 +82,7 @@ class ImageResizer
     public function setUpsize($enable)
     {
         $this->upsize = $enable;
+        return $this;
     }
     
     public function resize($source, $destination)
