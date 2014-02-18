@@ -120,7 +120,7 @@ class Resizer
             $dst_height = $src_height / $src_width * $dst_width;
         }
         
-        $this->editor->loadFile($source);
+        $this->editor->loadFile($source_info);
         
         $this->mode->applyEdits(
             $source_info, 
