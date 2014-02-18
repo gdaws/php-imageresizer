@@ -21,6 +21,13 @@ class GDEditor implements EditorInterface
             $options["use_imagecrop"] : false;
     }
     
+    public static function newInstanceIfSupported()
+    {
+        if (extension_loaded("gd")) {
+            return new self;
+        }
+    }
+    
     public function loadFile(ImageInfo $image_info)
     {
         $filename = $image_info->getFilename();

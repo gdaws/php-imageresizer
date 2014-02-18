@@ -4,6 +4,7 @@ namespace Gdaws\ImageResizer\Editor;
 
 use Gdaws\ImageResizer\ImageInfo;
 use Gdaws\ImageResizer\Exception\ImageEditorException;
+use Symfony\Component\Process\Process;
 use Symfony\Component\Process\ProcessBuilder;
 
 class ImageMagickEditor implements EditorInterface
@@ -25,6 +26,41 @@ class ImageMagickEditor implements EditorInterface
         $this->source = null;
         $this->resize = null;
         $this->crop = null;
+    }
+    
+    public static function newInstanceIfSupported()
+    {
+        if (defined("PHP_WINDOWS_VERSION_BUILD")) {
+            
+            $commands = array(
+                "convert.exe",
+                "C:\\Program Files\\ImageMagick-6.8.8-Q16\\convert.exe"
+            );
+        }
+        else {
+            
+            $commands = array(
+                "convert",
+                "/usr/bin/convert",
+                "/usr/local/convert"
+            );
+        }
+        
+        foreach ($commands as $command) {
+            
+            if (self::testCommand($command . " --version", "ImageMagick")) {
+                return new self($command);
+            }
+        }
+    }
+    
+    private static function testCommand($cmd, $contains_output)
+    {
+        $process = new Process($cmd);
+        $exit_status = $process->run();
+        
+        return $exit_status === 0 && 
+            strpos($process->getOutput(), $contains_output) !== false;
     }
     
     public function setProcessTimeout($timeout)
