@@ -34,7 +34,8 @@ class ImageMagickEditor implements EditorInterface
             
             $commands = array(
                 "convert.exe",
-                "C:\\Program Files\\ImageMagick-6.8.8-Q16\\convert.exe"
+                "C:\\Program Files\\ImageMagick-6.8.8-Q16\\convert.exe",
+                "C:\\Program Files\\ImageMagick-6.8.7-Q16\\convert.exe"
             );
         }
         else {
