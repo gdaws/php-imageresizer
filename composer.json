@@ -1,5 +1,7 @@
 {
     "name": "gdaws/imageresizer",
+    "description": "High-level image resizing library",
+    "keywords":["imageresizer", "thumbnail", "gd", "imagemagick"],
     "type": "library",
     "license": "MIT",
     "autoload":{
@@ -8,8 +10,8 @@
             "Gdaws\\ImageResizer\\Tests": "./tests"
         }
     },
-    "keywords":["imageresizer", "thumbnail", "gd", "imagemagick"],
     "require":{
+        "php": ">=5.3.3",
         "symfony/process": "v2.4.2"
     },
     "require-dev":{
