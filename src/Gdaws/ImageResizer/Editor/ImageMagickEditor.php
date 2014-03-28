@@ -43,7 +43,7 @@ class ImageMagickEditor implements EditorInterface
             $commands = array(
                 "convert",
                 "/usr/bin/convert",
-                "/usr/local/convert"
+                "/usr/local/bin/convert"
             );
         }
         
