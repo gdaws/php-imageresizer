@@ -2,7 +2,7 @@
 
 namespace Gdaws\ImageResizer\Exception;
 
-class ImageResizerModeException extends \RuntimeException
+class ImageResizerModeException extends ImageResizerException
 {
     function __construct($message)
     {
