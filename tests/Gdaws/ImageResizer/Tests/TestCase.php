@@ -2,11 +2,18 @@
 
 namespace Gdaws\ImageResizer\Tests;
 
+use Gdaws\ImageResizer\ImageInfo;
+
 class TestCase extends \PHPUnit_Framework_TestCase
 {
     protected function getFixtureFilename($basename)
     {
         return __DIR__ . "/fixtures/" . $basename;
+    }
+    
+    protected function createImageInfo($basename)
+    {
+        return new ImageInfo($this->getFixtureFilename($basename));   
     }
     
     protected function createImageInfoMock($width, $height, $filename = null)

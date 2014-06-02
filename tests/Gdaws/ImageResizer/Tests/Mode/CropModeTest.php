@@ -58,6 +58,12 @@ class CropModeTest extends TestCase
         $mode->applyEdits(
             $this->createImageInfoMock(100, 400), 90, 100, array(), $editor
         );
+        
+        $editor = $this->createEditor(225, 172, 0, 41, 225, 90);
+        
+        $mode->applyEdits(
+            $this->createImageInfoMock(2000, 1530), 225, 90, array(), $editor
+        );
     }
     
     function testNoCrop()
@@ -77,9 +83,9 @@ class CropModeTest extends TestCase
         );
     }
     
-    function testNoCropUpsize()
+    function testUpsize()
     {
-        $editor = $this->createEditor(500, 125);
+        $editor = $this->createEditor(2000, 500, 750, 0, 500, 500);
         
         $mode = new CropMode();
         

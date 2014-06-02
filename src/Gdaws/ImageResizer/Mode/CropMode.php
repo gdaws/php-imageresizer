@@ -25,10 +25,7 @@ class CropMode implements ModeInterface
         
         $dst_width_per_height = $dst_width / $dst_height;
         
-        $width_diff = abs($src_width - $dst_width);
-        $height_diff = abs($src_height - $dst_height);
-        
-        if ($width_diff < $height_diff) {
+        if ($dst_width_per_height > $src_width_per_height) {
             $resize_width = $dst_width;
             $resize_height = $src_height_per_width * $dst_width;
         }
