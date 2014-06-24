@@ -107,7 +107,7 @@ class Resizer
         
         if ($src_is_smaller && !$this->upsize) {
             
-            $this->editor->loadFile($source);
+            $this->editor->loadFile($source_info);
             $this->editor->saveFile($destination, $this->output_attributes);
             
             return $this;
